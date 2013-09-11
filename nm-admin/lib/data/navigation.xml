@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE navigation[]>
+<navigation>
+	<page name="edit" href="nm-edit-network.php" var="n"/>
+	<page name="structure" href="nm-network.php" var="n"/>
+	<page name="train" href="nm-train.php" var="n">
+		<page name="edit" href="nm-edit-set.php" var="n,s"/>
+		<page name="start" href="nm-run-set.php" var="n,s"/>
+		<page name="history" href="nm-set-history.php" var="n,s"/>
+	</page>
+	<page name="history" var="n">
+		<page name="list" href="nm-history.php" var="n"/>
+		<page name="clear" href="nm-clear-history.php" var="n"/>
+	</page>
+	<page name="run" href="nm-run.php" var="n"/>
+	<page name="users" var="n">
+		<page name="list" href="nm-users.php" var="n" />
+		<page name="add" href="nm-add-user.php" var="n"/>
+	</page>
+</navigation>

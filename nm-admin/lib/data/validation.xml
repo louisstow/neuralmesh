@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validation[]>
+<validation>
+	<set name="default">
+		<n type="int" check="network.validate" message="Network not found!"/>
+	</set>
+	
+	<set name="run">
+		<input type="binary" />
+	</set>
+	
+	<set name="trainingset">
+		<id type="int" check="train.validate"/>
+		<input type="binary" />
+		<output type="binary" />
+	</set>
+	
+	<set name="import">
+		<id type="int" />
+		<file type="file" ext="nms" />
+	</set>
+	
+	<set name="newset">
+		<label type="varchar" minlen="1" maxlen="100"/>
+		<n type="int" check="network.validate" message="Network not found!"/>
+	</set>
+	
+	<set name="setrename">
+		<label type="varchar" minlen="1" maxlen="100"/>
+		<id type="int" check="train.validate" message="Training set not found!"/>
+	</set>
+	
+	<set name="network.data">
+		<label type="varchar" maxlen="50" minlen="3"/>
+		<inputs type="signed" range="1,100"/>
+		<neurons type="signed" range="1,5000"/>
+		<layers type="signed" range="1,5"/>
+		<outputs type="signed" range="1,100"/>
+		<lr type="int" range="0.00005,5"/>
+		<mse type="int" range="0.00005,1"/>
+		<epoch type="int" range="1,100000000"/>
+		<bias type="int" range="0,5"/>
+		<momentum type="int" range="0,1"/>
+		<wrange type="int" range="-5,5"/>
+	</set>
+	
+	<set name="network.edit">
+		<id type="int" check="network.validate"/>
+		<label type="varchar" maxlen="50" minlen="3"/>
+		<lr type="int" range="0.00005,5"/>
+		<mse type="int" range="0.00005,1"/>
+		<epoch type="int" range="1,100000000"/>
+		<momentum type="int" range="0,1"/>
+	</set>
+	
+	<set name="users.add">
+		<user type="alpha" maxlen="20" minlen="3"/>
+		<pass type="varchar" maxlen="20" minlen="5"/>
+	</set>
+</validation>

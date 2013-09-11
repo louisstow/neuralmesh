@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE queries[]>
+<queries>
+	<query name="get">
+	<![CDATA[
+	SELECT n.*
+	FROM networks n LEFT JOIN usernetwork u ON n.networkID = u.networkID
+	WHERE n.networkID = :id AND u.userID = :user
+	]]>
+	</query>
+	
+	<query name="getAll">
+	<![CDATA[
+	SELECT n.networkID, networkName
+	FROM usernetwork u INNER JOIN networks n ON n.networkID = u.networkID
+	WHERE u.userID = :id AND n.networkType = 'managed'
+	]]>
+	</query>
+	
+	<query name="add">
+	<![CDATA[
+	INSERT INTO networks(networkName,snapshot,authkey,networkType,momentumrate,learningrate,targetmse,epochmax,createdDate) 
+	VALUES(:label,NULL,:key,:type,:rate,:lr,:mse,:epoch,now())
+	]]>
+	</query>
+	
+	<query name="update">
+	<![CDATA[
+	UPDATE networks 
+	SET snapshot = :data
+	WHERE networkID = :id
+	]]>
+	</query>
+	
+	<query name="stream">
+	<![CDATA[
+	UPDATE networks 
+	SET snapshot = CONCAT(snapshot,:data)
+	WHERE networkID = :id
+	]]>
+	</query>
+	
+	<query name="remove">
+	<![CDATA[
+	DELETE FROM networks
+	WHERE networkID = :id
+	]]>
+	</query>
+	
+	<query name="updateAll">
+	<![CDATA[
+	UPDATE networks 
+	SET networkName = :label, learningrate = :lr, targetmse = :mse, epochmax = :epoch
+	WHERE networkID = :id
+	]]>
+	</query>
+	
+	<query name="auth">
+	<![CDATA[
+	SELECT *
+	FROM networks
+	WHERE authkey = :auth
+	]]>
+	</query>
+	
+	<query name="validate">
+	<![CDATA[
+	SELECT n.networkID
+	FROM networks n LEFT JOIN usernetwork u ON n.networkID = u.networkID
+	WHERE n.networkID = :id AND u.userID = :user
+	]]>
+	</query>
+	
+	<query name="stats">
+	<![CDATA[
+	SELECT *
+	FROM
+	(SELECT COUNT(t.userID) as users
+	FROM (SELECT u2.userID FROM usernetwork u  INNER JOIN usernetwork u2 ON u2.networkID = u.networkID WHERE u.userID = :id GROUP BY u2.userID) t) users,
+	(SELECT COUNT(*) as networks
+	FROM usernetwork u3
+	WHERE u3.userID = :id) networks,
+	(SELECT COUNT(*) as trainsets
+	FROM usernetwork u4 INNER JOIN trainsets t ON t.networkID = u4.networkID
+	WHERE u4.userID = :id) trainsets,
+	(SELECT ROUND(SUM(e.execTime),2) as exec
+	FROM usernetwork u5 INNER JOIN epochs e ON u5.networkID = e.networkID
+	WHERE u5.userID = :id) exec,
+	(SELECT ROUND(AVG(e.endMSE),4) as mse
+	FROM usernetwork u6 INNER JOIN epochs e ON u6.networkID = e.networkID
+	WHERE u6.userID = :id) mse
+	]]>
+	</query>
+	
+	<query name="clear">
+	<![CDATA[
+	DELETE FROM networks
+	WHERE networkType = "unmanaged" AND DATEDIFF(now(),createdDate) > :n
+	]]>
+	</query>
+</queries>

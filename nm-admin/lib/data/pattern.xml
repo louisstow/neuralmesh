@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE queries[]>
+<queries>
+	<query name="removeAll">
+	<![CDATA[
+	DELETE FROM patterns
+	WHERE trainsetID = :id
+	]]>
+	</query>
+	
+	<query name="getAll">
+	<![CDATA[
+	SELECT *
+	FROM patterns
+	WHERE trainsetID = :id
+	]]>
+	</query>
+	
+	<query name="remove">
+	<![CDATA[
+	DELETE FROM patterns
+	WHERE patternID = :id
+	]]>
+	</query>
+	
+	<query name="add">
+	<![CDATA[
+	INSERT INTO patterns(trainsetID,pattern,output)
+	VALUES (:id,:pattern,:output)
+	]]>
+	</query>
+	
+	<query name="getSet">
+	<![CDATA[
+	SELECT * 
+	FROM trainsets t INNER JOIN patterns p ON p.trainsetID = t.trainsetID 
+	WHERE t.trainsetID = :id
+	]]>
+	</query>
+</queries>

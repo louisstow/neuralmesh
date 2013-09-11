@@ -1,0 +1,8 @@
+@CHARSET "ISO-8859-1";
+body { font-family:Verdana; background:url('../images/bg.gif') }
+#login-wrapper { text-align:center; padding-top:50px; }
+#login { width:300px; background:#ebebeb; text-align:center; padding:15px 5px 5px 5px; border:1px solid #aaa;  margin:auto }
+#login table { width:90% }
+#login .txt { font-size:20px; width:99% }
+#login th, #login td { text-align:left; font-size:10px }
+.button { padding:5px; border:1px solid #4ad300; background:#e4ffd5; color:#308900; text-decoration:none; margin-top:10px; font-family:Verdana }

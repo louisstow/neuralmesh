@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE queries[]>
+<queries>	
+	<query name="store">
+	<![CDATA[
+	INSERT INTO epochs(networkID,iterations,startMSE,endMSE,epochDate,execTime,trainsetID) 
+	VALUES(:id,:iterations,:startmse,:endmse,now(),:time,:train)
+	]]>
+	</query>
+	
+	<query name="get">
+	<![CDATA[
+	SELECT *
+	FROM epochs
+	WHERE trainsetID = :id
+	ORDER BY epochDate desc
+	]]>
+	</query>
+	
+	<query name="getall">
+	<![CDATA[
+	SELECT *
+	FROM epochs
+	WHERE networkID = :id
+	ORDER BY epochDate desc
+	]]>
+	</query>
+	
+	<query name="clear">
+	<![CDATA[
+	DELETE FROM epochs
+	WHERE networkID = :id
+	]]>
+	</query>
+</queries>

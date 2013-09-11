@@ -1,0 +1,83 @@
+body { font-family:Verdana; font-size:14px; margin:0; width:100% }
+
+a img { border:0 }
+
+a:visited { color:#0066ff; }
+
+.button { padding:5px; border:1px solid #4ad300; background:#e4ffd5; color:#308900; text-decoration:none; margin:10px 0; font-family:Verdana }
+.button:visited { }
+.number { font-family:Georgia; font-size:16px; background:#353535; color:#fff; padding:0 5px 3px 5px }
+abbr { border-bottom:1px dotted #888; cursor:help }
+
+var { display:block; width:265px; font-size:12px; font-style:normal; padding:5px; background:#ccc; font-weight:bold; margin-left:-10px }
+#topbar { background:#666; padding:6px; border-bottom:2px solid #ccc; color:#fff; font-size:10px; margin:0; height:13px }
+#topbar a { color:#fff; text-decoration:none }
+#topbar a img { margin:0 5px 0 0; border:0; }
+#topbar a:hover { color:#a2ed8b }
+#topbar span.left { float:left }
+#topbar span.right { float:right; margin-right:10px }
+#header { margin:0 0 10px 0; background:url('../images/pattern.gif') bottom right no-repeat; min-width:600px; width:100% }
+#header a img { margin:10px 0 }
+
+#main { padding-left:10px }
+
+#lvl0 { list-style:none; padding:5px 0 7px 15px; margin:0; border-bottom:10px solid #50e400 }
+#lvl0 li { display:inline; }
+#lvl0 li a { padding:8px 25px 8px 25px; background:#f5fac6; color:#000; text-decoration:none; font-size:12px; text-transform:uppercase }
+#lvl0 li a:hover { text-decoration:underline }
+#lvl0 li a.active { color:#fff; background:#50e400; }
+
+#lvl1 { padding:7px 5px 10px 10px; margin:0; font-size:12px; background:url('../images/navbg.gif') repeat-x bottom;  border-bottom:1px solid #4ad300 }
+#lvl1 li { display:inline; margin-right:25px }
+#lvl1 li a { text-decoration:none; padding:3px 5px 5px 5px; color:#403f3f }
+#lvl1 li a:hover { text-decoration:underline; }
+#lvl1 li a.active { background:#1e5600; color:#fff }
+
+#tabdata { border-collapse:collapse }
+#tabdata tr:nth-child(odd) { background:#fafafa }
+#tabdata th { background:#ebebeb; font-size:12px; border:solid #ccc; border-width:1px 0 1px 1px; padding:8px 10px }
+#tabdata th:last-child { border-right:1px solid #ccc; border-left:0 }
+#tabdata th.end { border-left:1px solid #ccc }
+#tabdata td { border:1px solid #ccc; padding:5px 10px } 
+#tabdata.left { float:left; margin-right:20px }
+
+#tabform { text-align:left; font-size:12px }
+#tabform strong { padding:5px; background:#ebebeb; margin:15px 0 5px 0; display:block; border-bottom:1px solid #ccc }
+#tabform input { width:100% }
+#tabform input.cb { width:50px; }
+
+#forms { float:left; border:2px solid #ececec; padding:20px; margin:0 10px }
+
+#tree { float:left; font-family:Arial, Helvetica, sans-serif; border:1px solid #cdd398; padding:20px; width:40% }
+#tree div { background:#f5fac6; margin:-20px -20px 0 -20px; padding:5px; border-bottom:1px solid #cdd398; line-height:25px }
+#tree ul { list-style:none; border-left:2px dotted #e0e0e0; font-size:12px }
+#tree li { margin-top:10px; margin-bottom:10px; padding-left:20px; cursor:default }
+#tree a { text-decoration:none; color:#000; border:1px solid #ccc; padding:0; font-size:12px; margin:2px 25px 0 -10px; width:7px; height:7px; display:block; text-align:center; line-height:6px; float:left }
+#tree a:hover { background-color:#ebebeb }
+
+#tree li.layer { background:url('../images/layer.gif') no-repeat 22px -2px; }
+#tree li.neuron { background:url('../images/neuron.gif') no-repeat 28px 1px; }
+#tree li.synapse { background:url('../images/synapse.gif') no-repeat 0 0; }
+
+#tools { float:right; width:300px; border:solid #ccc; border-width:0 0 1px 1px; margin:-10px 0 0 0; background:#ebeadb }
+#tools input.button { margin-left:15px }
+fieldset { display:block; width:250px; margin:15px auto -1px auto; border:solid #ccc; border-width:0 0 1px 0; padding:10px 10px 15px 10px; }
+fieldset form i { font-family:mono-space }
+fieldset table th { font-size:10px; font-weight:normal; text-align:right; width:100px }
+fieldset table td input.small { width:100px }
+div.hr { border-bottom:10px solid #50e400; clear:both; margin:0 }
+legend { padding:2px 10px; margin:-10px 0 0 -10px; font-weight:bold; font-size:10px }
+
+.infocontainer { float:left; width:40% }
+.infobox {  border:1px solid #ccc; padding:10px 10px 0 10px; background:#fafafa; font-size:12px; line-height:18px; margin:0 20px 10px 0 }
+.infobox div { border:1px solid #cdd398; background:#f5fac6; margin:-11px -11px -5px -11px; padding:6px 12px; font-weight:bold }
+
+#overview { margin:5px; border-collapse:collapse; width:99% }
+#overview th { text-align:left; font-weight:normal; padding:10px 0; border-bottom:1px dashed #ccc }
+#overview td { border-bottom:1px dashed #ccc; text-align:right; }
+#overview th img { margin:0 5px 0 0; vertical-align:bottom; }
+#overview tr:last-child td { border:0 }
+#overview tr:last-child th { border:0 }
+
+#error { width:70%; border:1px solid #ccc; background:#fafafa; margin:-120px auto 0 auto; position:relative; top:50%; padding:50px }
+#error h1 { margin:0 }

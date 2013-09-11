@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+{!loadAssets()}
+<title>Neural Mesh Control Panel</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="topbar">
+	<span class="left"><a href="nm-main.php"><img src="images/house.gif"/>Control Panel</a></span>
+	<span class="right">Welcome {!user}! :: <a href="nm-logout.php">logout</a></span>
+</div>
+
+<div id="header">
+	<a href="nm-main.php"><img src="images/Logo.png" /></a>
+	<div class="hr"></div>
+</div>
+<div id="main">
+
+<div id="tools">
+{!import:network}
+</div>
+
+<table id="tabdata" class="left">
+<tr><th>Networks</th><th></th></tr>
+{!nlist}
+</table>
+
+<div class="infocontainer">
+<div class="infobox">
+<div>Welcome to Neural Mesh</div>
+<p>Here is your control panel, this is where you get started with your neural network and bring artificial life to your projects.</p>
+
+<p>If you need help getting started, read our thorough <a href="http://neuralmesh.com/docs/">documentation</a> or visit the <a href="http://forums.neuralmesh.com">forums</a> to request help.</p>
+
+<p>You can get started by using the form on the right to create your network. The next step is to teach the network by using the admin to create training sets, use the api to perform unsupervised training, or even import a pre-built training set (download some free training sets).</p>
+
+<p>Goodluck and Godspeed!</p>
+</div>
+
+<div class="infobox">
+<div>Overview</div>
+
+<table id="overview">
+<tr><th><img src="images/network.png" /> Networks:</th><td><span class="number">{!networks}</span></td></tr>
+<tr><th><img src="images/book.png" /> Training Sets:</th><td><span class="number">{!trainsets}</span></td></tr>
+<tr><th><img src="images/error.png" /> Global <abbr title="Mean Squared Error">MSE</abbr>:</th><td><span class="number">{!mse}</span></td></tr>
+<tr><th><img src="images/time.png" /> Total Execution Time:</th><td><span class="number">{!exec}</span></td></tr>
+<tr><th><img src="images/user.png" /> Users:</th><td><span class="number">{!users}</span></td></tr>
+<tr><th><img src="images/key.png" /> Authkey:</th><td><span class="number">{!auth}</span></td></tr>
+</table>
+
+</div>
+</div>
+
+</div>
+</body>
+</html>

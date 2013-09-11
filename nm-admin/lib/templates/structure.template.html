@@ -1,0 +1,50 @@
+<div id="tools">
+<fieldset>
+<legend>Authkey</legend>
+<var>{!authkey}</var>
+</fieldset>
+
+<fieldset>
+<legend>Input(s)</legend>
+<form action="nm-manage-network.php" method="get">
+<input type="text" size="1" value="1" name="quantity" />
+<input type="hidden" name="action" value="{!input}"/>
+<input type="hidden" name="n" value="{!n}"/>
+<input type="submit" name="submit" value="Add" />
+<input type="submit" name="submit" value="Remove" />
+</form>
+</fieldset>
+
+<fieldset>
+<legend>Neuron(s)</legend>
+<form action="nm-manage-network.php" method="get">
+<input type="text" size="1" value="1" name="quantity" />
+<input type="hidden" name="action" value="{!neuron}"/>
+<input type="hidden" name="n" value="{!n}"/>
+<input type="submit" name="submit" value="Add" />
+<input type="submit" name="submit" value="Remove" />
+</form>
+</fieldset>
+
+<fieldset>
+<legend>Layer(s)</legend>
+<form action="nm-manage-network.php" method="get">
+<input type="text" size="1" value="1" name="quantity" />
+<input type="hidden" name="action" value="{!layer}"/>
+<input type="hidden" name="n" value="{!n}"/>
+<input type="submit" name="submit" value="Add" />
+<input type="submit" name="submit" value="Remove" />
+</form>
+</fieldset>
+
+<fieldset>
+<legend>Output(s)</legend>
+<form action="nm-manage-network.php" method="get">
+<input type="text" size="1" value="1" name="quantity" />
+<input type="hidden" name="action" value="{!output}"/>
+<input type="hidden" name="n" value="{!n}"/>
+<input type="submit" name="submit" value="Add" />
+<input type="submit" name="submit" value="Remove" />
+</form>
+</fieldset>
+</div>

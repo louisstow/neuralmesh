@@ -1,0 +1,39 @@
+<div id="tools">
+	<fieldset>
+	<legend>New Pattern</legend>
+	<form action="nm-manage-set.php?action=add" method="post">
+	<input type="text" name="input" />
+	<img src="images/arrow.gif"/>
+	<input type="text" name="output" />
+	<input type="hidden" name="id" value="{!s}" />
+	<input type="submit" value="Add" />
+	</form>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Rename</legend>
+	<form action="nm-manage-set.php?action=rename" method="post">
+	<input type="text" name="label" />
+	<input type="hidden" name="id" value="{!s}" />
+	<input type="submit" value="Update" />
+	</form>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Import</legend>
+	<form action="nm-import-set.php?n={!n}" method="post" enctype="multipart/form-data">
+	<input type="file" name="file" size="2" />
+	<input type="hidden" name="id" value="{!s}" />
+	<input type="submit" value="Import" />
+	</form>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Export</legend>
+	<form action="nm-export-set.php?n={!n}" method="post">
+	<input type="text" name="file" size="5" value="set" />
+	<input type="hidden" name="id" value="{!s}" />
+	<input type="submit" value="Export" />
+	</form>
+	</fieldset>
+</div>

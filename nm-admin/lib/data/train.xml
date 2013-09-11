@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE queries[]>
+<queries>
+	<query name="get">
+	<![CDATA[
+	SELECT *
+	FROM trainsets
+	WHERE trainsetID = :id
+	]]>
+	</query>
+
+	<query name="getAll">
+	<![CDATA[
+	SELECT *
+	FROM trainsets
+	WHERE networkID = :id
+	]]>
+	</query>
+	
+	<query name="update">
+	<![CDATA[
+	UPDATE trainsets
+	SET label = :label 
+	WHERE trainsetID = :id
+	]]>
+	</query>
+	
+	<query name="add">
+	<![CDATA[
+	INSERT INTO trainsets(networkID,label)
+	VALUES(:id,:label)
+	]]>
+	</query>
+	
+	<query name="remove">
+	<![CDATA[
+	DELETE FROM trainsets
+	WHERE trainsetID = :id
+	]]>
+	</query>
+	
+	<query name="validate">
+	<![CDATA[
+	SELECT u.networkID
+	FROM trainsets t INNER JOIN usernetwork u ON t.networkID = u.networkID
+	WHERE t.trainsetID = :id AND u.userID = :user
+	]]>
+	</query>
+</queries>
